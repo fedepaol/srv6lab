@@ -2,6 +2,18 @@ name: evpnl3
 
 topology:
   nodes:
+    ce1:
+      kind: linux
+      image: quay.io/frrouting/frr:10.2.4
+      binds:
+        - ce1/:/etc/frr/
+        - ce1/setup.sh:/setup.sh
+    ce2:
+      kind: linux
+      image: quay.io/frrouting/frr:10.2.4
+      binds:
+        - ce2/:/etc/frr/
+        - ce2/setup.sh:/setup.sh
     pe1:
       kind: linux
       image: quay.io/frrouting/frr:10.2.4
@@ -36,5 +48,7 @@ topology:
   links:
     - endpoints: ["pe1:eth1", "router:eth1"]
     - endpoints: ["pe2:eth1", "router:eth2"]
-    - endpoints: ["HOST1:eth1", "pe1:eth2"]
-    - endpoints: ["HOST2:eth1", "pe2:eth2"]
+    - endpoints: ["HOST1:eth1", "ce1:eth2"]
+    - endpoints: ["HOST2:eth1", "ce2:eth2"]
+    - endpoints: ["ce1:eth1", "pe1:eth2"]
+    - endpoints: ["ce2:eth1", "pe2:eth2"]
