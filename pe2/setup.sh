@@ -10,7 +10,7 @@ sysctl -w net.vrf.strict_mode=1
 ip link add sr0 type dummy
 ip link set sr0 up
 ip address add 10.0.0.2/32 dev lo
-ip addr add  fd00:0:2::1/128 dev lo
+ip addr add fd00:0:2::1/128 dev lo
 
 ip addr add 2001:db8:cafe:f00e::1/64 dev eth1
 
