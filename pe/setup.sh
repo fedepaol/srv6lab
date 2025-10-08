@@ -10,14 +10,18 @@ sysctl -w net.vrf.strict_mode=1
 ip link add sr0 type dummy
 ip link set sr0 up
 
-ip address add 10.0.0.1/32 dev lo
-ip addr add  fd00:0:1::1/128 dev lo
-ip addr add 2001:db8:cafe:f00d::1/64 dev eth1
+# ip addr add 192.168.10.1/24 dev eth1 -> to host 1
+ip -6 addr add fc00:0000:0000:0000::13/127 dev eth2
+ip -6 addr add fc00:0:0:1::12/128 dev lo
+
+
+ip addr add fd00:30:12::1/128 dev lo
 
 ip link add red type vrf table 1100
 
 # Leaf - host leg
-ip link set eth2 master red
-ip addr add 192.168.10.2/24 dev eth2
+ip link set eth1 master red
+ip addr add 10.1.1.2/24 dev eth1
+ip -6 addr add fc00:0:0:10::2/64 dev eth1
 
 ip link set red up

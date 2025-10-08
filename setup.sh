@@ -1,12 +1,11 @@
 #!/bin/bash
 #
 
-sudo clab deploy --reconfigure --topo direct.clab.yml
+sudo clab deploy --reconfigure --topo poc.clab.yaml
 
-docker exec clab-evpnl3-pe1 /setup.sh
-docker exec clab-evpnl3-pe2 /setup.sh
-docker exec clab-evpnl3-ce1 /setup.sh
-docker exec clab-evpnl3-ce2 /setup.sh
-docker exec clab-evpnl3-router /setup.sh
-docker exec clab-evpnl3-HOST1 /setup.sh
-docker exec clab-evpnl3-HOST2 /setup.sh
+docker exec clab-poc-pe /setup.sh
+docker exec clab-poc-al /setup.sh
+docker exec clab-poc-sp /setup.sh
+docker exec clab-poc-bl /setup.sh
+docker exec clab-poc-HOST1 /setup.sh
+docker exec clab-poc-HOST2 /setup.sh
