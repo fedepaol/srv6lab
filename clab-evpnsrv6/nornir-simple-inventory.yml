@@ -1,0 +1,31 @@
+---
+evpnsrv6-br:
+    username: 
+    password: 
+    platform: bridge
+    hostname: 
+pe1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.5
+pe2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.3
+pe3:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.6
+remotepe:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.2
+tor:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.4

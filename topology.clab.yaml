@@ -1,0 +1,43 @@
+name: evpnsrv6
+
+topology:
+  nodes:
+    pe1:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.0
+      binds:
+        - pe1/:/etc/frr/
+        - pe1/setup.sh:/setup.sh
+    pe2:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.0
+      binds:
+        - pe2/:/etc/frr/
+        - pe2/setup.sh:/setup.sh
+    pe3:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.0
+      binds:
+        - pe3/:/etc/frr/
+        - pe3/setup.sh:/setup.sh
+    tor:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.0
+      binds:
+        - tor/:/etc/frr/
+        - tor/setup.sh:/setup.sh
+    remotepe:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.0
+      binds:
+        - remotepe/:/etc/frr/
+        - remotepe/setup.sh:/setup.sh
+    evpnsrv6-br:
+      kind: bridge
+
+  links:
+    - endpoints: ["pe1:eth1", "evpnsrv6-br:pe1"]
+    - endpoints: ["pe2:eth1", "evpnsrv6-br:pe2"]
+    - endpoints: ["pe3:eth1", "evpnsrv6-br:pe3"]
+    - endpoints: ["tor:eth1", "evpnsrv6-br:tor"]
+    - endpoints: ["tor:eth2", "remotepe:eth1"]

@@ -1,0 +1,301 @@
+{
+  "name": "evpnsrv6",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-65c288e32360",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "evpnsrv6-br": {
+      "index": "0",
+      "shortname": "evpnsrv6-br",
+      "longname": "clab-evpnsrv6-evpnsrv6-br",
+      "fqdn": "evpnsrv6-br.evpnsrv6.io",
+      "group": "",
+      "labdir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/evpnsrv6-br",
+      "kind": "bridge",
+      "image": "",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "004-pe1-evpn-route-reflector",
+        "clab-git-hash": "5c48f5d",
+        "clab-mgmt-net-bridge": "br-65c288e32360",
+        "clab-node-group": "",
+        "clab-node-kind": "bridge",
+        "clab-node-lab-dir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/evpnsrv6-br",
+        "clab-node-longname": "clab-evpnsrv6-evpnsrv6-br",
+        "clab-node-name": "evpnsrv6-br",
+        "clab-node-type": "",
+        "clab-owner": "root",
+        "clab-topo-file": "/home/fpaoline/evpnsrv6lab/topology.clab.yaml",
+        "containerlab": "evpnsrv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pe1": {
+      "index": "1",
+      "shortname": "pe1",
+      "longname": "clab-evpnsrv6-pe1",
+      "fqdn": "pe1.evpnsrv6.io",
+      "group": "",
+      "labdir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/pe1",
+      "kind": "linux",
+      "image": "quay.io/frrouting/frr:10.6.0",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "004-pe1-evpn-route-reflector",
+        "clab-git-hash": "5c48f5d",
+        "clab-mgmt-net-bridge": "br-65c288e32360",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/pe1",
+        "clab-node-longname": "clab-evpnsrv6-pe1",
+        "clab-node-name": "pe1",
+        "clab-node-type": "",
+        "clab-owner": "root",
+        "clab-topo-file": "/home/fpaoline/evpnsrv6lab/topology.clab.yaml",
+        "containerlab": "evpnsrv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pe2": {
+      "index": "2",
+      "shortname": "pe2",
+      "longname": "clab-evpnsrv6-pe2",
+      "fqdn": "pe2.evpnsrv6.io",
+      "group": "",
+      "labdir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/pe2",
+      "kind": "linux",
+      "image": "quay.io/frrouting/frr:10.6.0",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "004-pe1-evpn-route-reflector",
+        "clab-git-hash": "5c48f5d",
+        "clab-mgmt-net-bridge": "br-65c288e32360",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/pe2",
+        "clab-node-longname": "clab-evpnsrv6-pe2",
+        "clab-node-name": "pe2",
+        "clab-node-type": "",
+        "clab-owner": "root",
+        "clab-topo-file": "/home/fpaoline/evpnsrv6lab/topology.clab.yaml",
+        "containerlab": "evpnsrv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pe3": {
+      "index": "3",
+      "shortname": "pe3",
+      "longname": "clab-evpnsrv6-pe3",
+      "fqdn": "pe3.evpnsrv6.io",
+      "group": "",
+      "labdir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/pe3",
+      "kind": "linux",
+      "image": "quay.io/frrouting/frr:10.6.0",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "004-pe1-evpn-route-reflector",
+        "clab-git-hash": "5c48f5d",
+        "clab-mgmt-net-bridge": "br-65c288e32360",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/pe3",
+        "clab-node-longname": "clab-evpnsrv6-pe3",
+        "clab-node-name": "pe3",
+        "clab-node-type": "",
+        "clab-owner": "root",
+        "clab-topo-file": "/home/fpaoline/evpnsrv6lab/topology.clab.yaml",
+        "containerlab": "evpnsrv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "remotepe": {
+      "index": "4",
+      "shortname": "remotepe",
+      "longname": "clab-evpnsrv6-remotepe",
+      "fqdn": "remotepe.evpnsrv6.io",
+      "group": "",
+      "labdir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/remotepe",
+      "kind": "linux",
+      "image": "quay.io/frrouting/frr:10.6.0",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "004-pe1-evpn-route-reflector",
+        "clab-git-hash": "5c48f5d",
+        "clab-mgmt-net-bridge": "br-65c288e32360",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/remotepe",
+        "clab-node-longname": "clab-evpnsrv6-remotepe",
+        "clab-node-name": "remotepe",
+        "clab-node-type": "",
+        "clab-owner": "root",
+        "clab-topo-file": "/home/fpaoline/evpnsrv6lab/topology.clab.yaml",
+        "containerlab": "evpnsrv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "tor": {
+      "index": "5",
+      "shortname": "tor",
+      "longname": "clab-evpnsrv6-tor",
+      "fqdn": "tor.evpnsrv6.io",
+      "group": "",
+      "labdir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/tor",
+      "kind": "linux",
+      "image": "quay.io/frrouting/frr:10.6.0",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "004-pe1-evpn-route-reflector",
+        "clab-git-hash": "5c48f5d",
+        "clab-mgmt-net-bridge": "br-65c288e32360",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/fpaoline/evpnsrv6lab/clab-evpnsrv6/tor",
+        "clab-node-longname": "clab-evpnsrv6-tor",
+        "clab-node-name": "tor",
+        "clab-node-type": "",
+        "clab-owner": "root",
+        "clab-topo-file": "/home/fpaoline/evpnsrv6lab/topology.clab.yaml",
+        "containerlab": "evpnsrv6"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:88:4c:a4",
+          "peer": "z"
+        },
+        "z": {
+          "node": "evpnsrv6-br",
+          "interface": "pe1",
+          "mac": "aa:c1:ab:92:13:c0",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:aa:32:1e",
+          "peer": "z"
+        },
+        "z": {
+          "node": "evpnsrv6-br",
+          "interface": "pe2",
+          "mac": "aa:c1:ab:98:66:d7",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "pe3",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:e5:38:b4",
+          "peer": "z"
+        },
+        "z": {
+          "node": "evpnsrv6-br",
+          "interface": "pe3",
+          "mac": "aa:c1:ab:82:34:6d",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "tor",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:da:7d:ca",
+          "peer": "z"
+        },
+        "z": {
+          "node": "evpnsrv6-br",
+          "interface": "tor",
+          "mac": "aa:c1:ab:90:10:1d",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "tor",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:ef:0b:9b",
+          "peer": "z"
+        },
+        "z": {
+          "node": "remotepe",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:c0:eb:35",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}
